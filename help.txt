@@ -1,0 +1,8 @@
+1.Email Container --end
+2.Quots  --end
+3.About --end
+4.FAQ --end
+5.Logo
+6.Logo For Header Site
+7.Footer
+8.Loading 
