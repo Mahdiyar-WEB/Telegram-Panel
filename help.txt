@@ -4,5 +4,11 @@
 4.FAQ --end
 5.Logo
 6.Logo For Header Site
-7.Footer
-8.Loading 
+7.Footer --end
+8.Loading --end
+9.Fix button margin top for cards
+10.Change price instead Buy for cards
+11.regex for enter character with number --end
+12.new password modal
+13.russian modals
+14.regex for russian login and register modals

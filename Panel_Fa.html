@@ -138,7 +138,12 @@
           </ul>
           <ul class="navbar-nav align-items-baseline">
             <li class="nav-item">
-              <a href="#" id="navbar-register" class="nav-link panel-nav-link"
+              <a
+                href="#"
+                id="navbar-register"
+                class="nav-link panel-nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
                 >ثبت نام/ورود</a
               >
             </li>
@@ -150,8 +155,8 @@
                 >Fa</a
               >
               <div class="dropdown-menu panel-dropdown-menu change-ln-menu">
-                <a class="dropdown-item english" href="#">En</a>
-                <a class="dropdown-item russian" href="#">Ru</a>
+                <a class="dropdown-item english" href="./Panel_EN.html">En</a>
+                <a class="dropdown-item russian" href="./Panel_RU.html">Ru</a>
               </div>
             </li>
           </ul>
@@ -159,6 +164,257 @@
       </div>
     </nav>
     <!-- End Navbar -->
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ورود به حساب کاربری
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group mb-2 login-username">
+                <label for="">نام کاربری</label>
+                <input
+                  type="text"
+                  class="form-control mt-2 login-username-inp"
+                  name=""
+                />
+              </div>
+              <div class="form-group mb-4 login-password">
+                <label for="">رمز عبور</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 login-password-inp"
+                  name=""
+                />
+              </div>
+              <input
+                type="button"
+                class="btn btn-primary w-100 login-btn"
+                value="ورود"
+              />
+              <button
+                class="bg-transparent text-primary border-0 mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModal"
+              >
+                حساب ندارید؟ ثبت نام
+              </button>
+              <button
+                class="bg-transparent d-block text-primary border-0 mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#forgetModal"
+              >
+                رمز را فراموش کردم
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Login Modal -->
+    <!-- Register Modal -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">ثبت نام</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group mb-2 reg reg-user">
+                <label for="">نام کاربری</label>
+                <input
+                  type="text"
+                  class="form-control reg-user-inp mt-2"
+                  name=""
+                  required
+                />
+              </div>
+              <div class="form-group mb-2 reg reg-pass">
+                <label for="">رمز عبور</label>
+                <input
+                  type="password"
+                  class="form-control reg-pass-inp mt-2"
+                  name=""
+                  required
+                />
+              </div>
+              <div class="form-group mb-2 reg reg-repass">
+                <label for="">تکرار رمز عبور</label>
+                <input
+                  type="password"
+                  class="form-control reg-repass-inp mt-2"
+                  name=""
+                  required
+                />
+              </div>
+              <div class="form-group mb-4 reg reg-email">
+                <label for="">ایمیل</label>
+                <input
+                  type="email"
+                  class="form-control reg-email-inp mt-2"
+                  name=""
+                  required
+                />
+              </div>
+              <input
+                type="button"
+                class="btn btn-primary w-100"
+                id="registerButton"
+                value="ثبت نام"
+              />
+              <button
+                class="bg-transparent text-primary border-0 mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                حساب دارید؟ ورود
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Register Modal -->
+    <!-- Verify Email Modal -->
+    <div
+      class="modal fade"
+      id="verifyModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">تایید حساب</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group mb-4">
+                <label for="">کد تایید ایمیل خودرا وارد کنید</label>
+                <input
+                  type="text"
+                  minlength="0"
+                  maxlength="4"
+                  class="form-control text-center verify-inp mt-2"
+                  name=""
+                />
+              </div>
+              <input
+                type="button"
+                class="btn btn-primary w-100 verify-btn disabled"
+                value="تایید حساب"
+              />
+              <button
+                class="bg-transparent text-primary border-0 mt-3"
+                id="editAccountModal"
+              >
+                ویرایش اطلاعات
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Verify Email Modal -->
+    <!-- Forget Password Modal -->
+    <div
+      class="modal fade"
+      id="forgetModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">تغییر رمز عبور</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group border mb-4 py-3 px-2 forget-send">
+                <label for="">ایمیل خود را برای دریافت کد وارد کنید</label>
+                <input
+                  type="email"
+                  class="form-control mt-2 forget-send-inp"
+                  name=""
+                />
+                <button
+                  class="btn btn-sm btn-primary w-100 mt-2 forget-send-btn"
+                >
+                  ارسال
+                </button>
+              </div>
+              <div class="form-group border py-3 px-2 forget-enter">
+                <label for="">کد را وارد کنید</label>
+                <input
+                  type="text"
+                  class="form-control mt-2 text-center forget-enter-inp"
+                  disabled
+                  name=""
+                  minlength="1"
+                  maxlength="4"
+                />
+                <button
+                  class="btn btn-sm btn-success w-100 mt-2 disabled forget-enter-btn"
+                >
+                  تایید
+                </button>
+              </div>
+              <button
+                class="bg-transparent text-primary border-0 mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                ورود
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Forget Password Modal -->
     <!-- Top Button -->
     <div class="top-button d-none">
       <button class="btn btn-primary rounded-circle">
@@ -965,6 +1221,53 @@
       </div>
     </section>
     <!-- End Qouts -->
+    <!-- Footer -->
+    <footer class="pt-3 footer">
+      <div class="mb-0 pt-3 pb-3 text-center container">
+        <h1 class="text-uppercase fw-bold mb-5">gold member</h1>
+        <div class="row mb-5">
+          <div class="col-md-3 col-12 mb-4 mb-md-0">
+            <form action="">
+              <input
+                type="email"
+                placeholder="ایمیل"
+                class="form-control py-1 mb-1 text-center"
+              />
+              <button
+                type="submit"
+                class="btn btn-sm btn-primary py-1 form-control"
+              >
+                عضو شوید
+              </button>
+            </form>
+          </div>
+          <div class="col-md-9 col-12 d-flex flex-column">
+            <div class="d-flex justify-content-evenly h6 mb-4 footer-links">
+              <a class="text-white-50" href="#about-link">درباره ما</a>
+              <a class="text-white-50" href="#faq-link">سوالات متداول</a>
+              <a class="text-white-50" href="">ثبت نام/ورود</a>
+            </div>
+            <div class="d-flex justify-content-center px-3 text-white-50 row">
+              <h6 class="col-12 col-md">
+                goldmember133@ <span class="fab fa-telegram"></span>
+              </h6>
+              <h6 class="col-12 col-md">
+                <span class="fas fa-envelope"> Goldmember133@gmail.com</span>
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center text-secondary">
+          <a
+            href="https://t.me/mahdiyarMN"
+            class="text-white text-decoration-none"
+          >
+            Mahdiyar <span class="fas fa-laptop-code"></span
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -973,8 +1276,237 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       $(document).ready(function () {
+        //#region Register/Login
+        //#region Forget
+        $(".forget-send-btn").click(function () {
+          var emailWrong = false;
+          var emailNull = false;
+          var email = $(".forget-send-inp").val();
+          var emailReg = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+          if ($(".forget-send-inp").val() == "") {
+            $(".forget-send-inp").addClass("is-invalid");
+            if (emailNull == false) {
+              $(".forget-send").append(
+                `<span class="invalid-feedback">ایمیل خود را وارد کنید</span>`
+              );
+            }
+            emailNull = true;
+          } else if (!emailReg.test(email)) {
+            $(".forget-send-inp").addClass("is-invalid");
+            if (emailWrong == false) {
+              $(".forget-send").append(
+                `<span class="invalid-feedback">ایمیل معتبر وارد کنید</span>`
+              );
+            }
+            emailWrong = true;
+          } else {
+            Swal.fire({
+              icon: "success",
+              title: "کد به ایمیل شما ارسال شد",
+              showConfirmButton: true,
+              // timer: 3000,
+            });
+            $(".forget-enter-inp").prop("disabled", false);
+          }
+        });
+        $(".forget-enter-inp").keyup(function () {
+          if ($(this).val().length == 4 && verifyNumbs.test($(this).val())) {
+            $(".forget-enter-btn").removeClass("disabled");
+          } else {
+            $(".forget-enter-btn").addClass("disabled");
+          }
+        });
+        $(".verify-inp").keyup(function () {
+          if ($(this).val().length == 4) {
+            $(".verify-btn").removeClass("disabled");
+          } else {
+            $(".verify-btn").addClass("disabled");
+          }
+        });
+        //#endregion
+        //#region Verify Account
+        var verifyNumbs = /^\d+$/;
+        $(".verify-inp").keyup(function () {
+          if ($(this).val().length == 4 && verifyNumbs.test($(this).val())) {
+            $(".verify-btn").removeClass("disabled");
+          } else {
+            $(".verify-btn").addClass("disabled");
+          }
+        });
+        ///#endregion
+        //#endregion
+        //#region Login
+        var loginUserNull = false;
+        var loginUserCh = false;
+        var loginPassNull = false;
+        var loginPassCh = false;
+        var loginUserChNull = false;
+        var loginPersainLn = false;
+        var loginUserChNullReg = /^[A-Za-z][A-Za-z0-9]*$/;
+        $(".login-btn").click(function () {
+          var loginUsername = $(".login-username-inp").val();
+          if ($(".login-username-inp").val() == "") {
+            $(".login-username-inp").addClass("is-invalid");
+            if (loginUserNull == false) {
+              $(".login-username").append(
+                `<span class="invalid-feedback">نام کاربری خود را وارد کنید</span>`
+              );
+            }
+            loginUserNull = true;
+          } else if (persianReg.test($(".login-username-inp").val())) {
+            $(".login-username-inp").addClass("is-invalid");
+            if (loginPersainLn == false) {
+              $(".login-username").append(
+                `<span class="invalid-feedback">نام کاربری را به انگلیسی وارد کنید</span>`
+              );
+            }
+            loginPersainLn = true;
+          } else if (!loginUserChNullReg.test(loginUsername)) {
+            $(".login-username-inp").addClass("is-invalid");
+            if (loginUserChNull == false) {
+              $(".login-username").append(
+                `<span class="invalid-feedback">نمیتوان فقط از اعداد برای نام کاربری استفاده کرد</span>`
+              );
+            }
+            loginUserChNull = true;
+          } else if ($(".login-username-inp").val().length < 3) {
+            $(".login-username-inp").addClass("is-invalid");
+            if (loginUserCh == false) {
+              $(".login-username").append(
+                `<span class="invalid-feedback">سه حرف یا بیشتر وارد کنید</span>`
+              );
+            }
+            loginUserCh = true;
+          } else if ($(".login-password-inp").val() == "") {
+            $(".login-password-inp").addClass("is-invalid");
+            if (loginPassNull == false) {
+              $(".login-password").append(
+                `<span class="invalid-feedback">رمز عبور خود را وارد کنید</span>`
+              );
+            }
+            loginPassNull = true;
+          } else if ($(".login-password-inp").val().length < 4) {
+            $(".login-password-inp").addClass("is-invalid");
+            if (loginPassCh == false) {
+              $(".login-password").append(
+                `<span class="invalid-feedback">چهار حرف یا بیشتر وارد کنید</span>`
+              );
+            }
+            loginPassCh = true;
+          }
+        });
+        //#endregion
+        //#region Register
+        var userNull = false;
+        var userCh = false;
+        var passNull = false;
+        var passCh = false;
+        var repassNull = false;
+        var repassWrong = false;
+        var emailNull = false;
+        var emailWrong = false;
+        var persianLn = false;
+        var userChNull = false;
+        var userChNullReg = /^[A-Za-z][A-Za-z0-9]*$/;
+        var emailReg = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        var persianReg = /^[ آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی]+$/i;
+        $("#registerButton").click(function () {
+          var email = $(".reg-email-inp").val();
+          if ($(".reg-user-inp").val() == "") {
+            $(".reg-user-inp").addClass("is-invalid");
+            if (userNull == false) {
+              $(".reg-user").append(
+                `<span class="invalid-feedback">نام کاربری خود را وارد کنید</span>`
+              );
+            }
+            userNull = true;
+          } else if (persianReg.test($(".reg-user-inp").val())) {
+            $(".reg-user-inp").addClass("is-invalid");
+            if (persianLn == false) {
+              $(".reg-user").append(
+                `<span class="invalid-feedback">نام کاربری را به انگلیسی وارد کنید</span>`
+              );
+            }
+            persianLn = true;
+          } else if (!userChNullReg.test($(".reg-user-inp").val())) {
+            $(".reg-user-inp").addClass("is-invalid");
+            if (userChNull == false) {
+              $(".reg-user").append(
+                `<span class="invalid-feedback">از اعداد و حروف برای نام کاربری استافده کنید</span>`
+              );
+            }
+            userChNull = true;
+          } else if ($(".reg-user-inp").val().length < 3) {
+            $(".reg-user-inp").addClass("is-invalid");
+            if (userCh == false) {
+              $(".reg-user").append(
+                `<span class="invalid-feedback">نام کاربری کوتاه است</span>`
+              );
+            }
+            userCh = true;
+          } else if ($(".reg-pass-inp").val() == "") {
+            $(".reg-pass-inp").addClass("is-invalid");
+            if (passNull == false) {
+              $(".reg-pass").append(
+                `<span class="invalid-feedback">رمز عبور را وارد کنید</span>`
+              );
+            }
+            passNull = true;
+          } else if ($(".reg-pass-inp").val().length < 4) {
+            $(".reg-pass-inp").addClass("is-invalid");
+            if (passCh == false) {
+              $(".reg-pass").append(
+                `<span class="invalid-feedback">رمز عبور کوتاه است</span>`
+              );
+            }
+            passCh = true;
+          } else if ($(".reg-repass-inp").val() == "") {
+            $(".reg-repass-inp").addClass("is-invalid");
+            if (repassNull == false) {
+              $(".reg-repass").append(
+                `<span class="invalid-feedback">رمز عبور خودرا تکرار کنید</span>`
+              );
+            }
+            repassNull = true;
+          } else if ($(".reg-repass-inp").val() !== $(".reg-pass-inp").val()) {
+            $(".reg-repass-inp").addClass("is-invalid");
+            if (repassWrong == false) {
+              $(".reg-repass").append(
+                `<span class="invalid-feedback">تکرار رمز عبور اشتباه است</span>`
+              );
+            }
+            repassWrong = true;
+          } else if ($(".reg-email-inp").val() == "") {
+            $(".reg-email-inp").addClass("is-invalid");
+            if (emailNull == false) {
+              $(".reg-email").append(
+                `<span class="invalid-feedback">ایمیل خود را وارد کنید</span>`
+              );
+            }
+            emailNull = true;
+          } else if (!emailReg.test(email)) {
+            $(".reg-email-inp").addClass("is-invalid");
+            if (emailWrong == false) {
+              $(".reg-email").append(
+                `<span class="invalid-feedback">ایمیل معتبر وارد کنید</span>`
+              );
+            }
+            emailWrong = true;
+          } else {
+            $(".reg input").removeClass("is-invalid");
+            $("#registerModal").modal("hide");
+            $("#verifyModal").modal("show");
+          }
+        });
+        $("#editAccountModal").click(function () {
+          $("#verifyModal").modal("hide");
+          $("#registerModal").modal("show");
+        });
+        //#endregion
+        //#endregion
         //#region JQlazy
         $(".lazy").lazy();
         //#endregion

@@ -10,6 +10,13 @@
   list-style-type: none;
   text-decoration: none;
 }
+body{
+  position: relative;
+}
+/* Toast */
+.toast-position {
+  position: absolute;
+}
 :root {
   --mainBlue: #40acf1;
   --transparentBlue: rgba(64, 172, 241, 0.7);
@@ -220,5 +227,42 @@
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .carousel-item .card {
     height: 530px !important;
+  }
+}
+/* Footer */
+.footer {
+  background-color: var(--mainBlack);
+}
+.footer h1 {
+  background: -webkit-linear-gradient(-45deg, #fff400, #ff4400, #feff05);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer-links a {
+  text-decoration: none;
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
