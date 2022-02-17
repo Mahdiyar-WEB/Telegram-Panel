@@ -147,7 +147,14 @@ body {
     padding: 0 50px !important;
   }
 }
-
+@media screen and (min-width: 1200px) {
+  #buy-btn2 {
+    margin-top: 20px !important;
+  }
+  #buy-btn6 {
+    margin-top: 20px !important;
+  }
+}
 @media screen and (min-width: 992px) {
   .service .card {
     height: 432px;

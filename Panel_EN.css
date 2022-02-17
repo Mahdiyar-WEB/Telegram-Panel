@@ -10,7 +10,7 @@
   list-style-type: none;
   text-decoration: none;
 }
-body{
+body {
   position: relative;
 }
 /* Toast */
@@ -151,7 +151,14 @@ body{
     padding: 0 50px !important;
   }
 }
-
+@media screen and (min-width: 1200px) {
+  #buy-btn3 {
+    margin-top: 25px !important;
+  }
+  #buy-btn5 {
+    margin-top: 25px !important;
+  }
+}
 @media screen and (min-width: 992px) {
   .service .card {
     height: 432px;
@@ -169,6 +176,7 @@ body{
 .service .card:hover {
   border-color: var(--mainBlue) !important;
 }
+
 /* followers */
 .follower {
   background-color: var(--mainBlue);

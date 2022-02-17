@@ -183,11 +183,18 @@ body {
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .service .card {
     height: 432px;
   }
+  #buy-btn2 {
+    margin-top: 45px !important;
+  }
+  #buy-btn3 {
+    margin-top: 25px !important;
+  }
 }
+
 .service .card {
   transition: all 0.3s ease;
   border-radius: 30px;

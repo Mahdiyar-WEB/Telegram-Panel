@@ -137,7 +137,7 @@
             </li>
           </ul>
           <ul class="navbar-nav align-items-baseline">
-            <li class="nav-item">
+            <li class="nav-item" id="navbarRegister">
               <a
                 href="#"
                 id="navbar-register"
@@ -363,7 +363,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Forget Password</h5>
             <button
               type="button"
               class="btn-close"
@@ -415,6 +415,108 @@
       </div>
     </div>
     <!-- End Forget Password Modal -->
+    <!-- Forget Change Password Modal -->
+    <div
+      class="modal fade"
+      id="changePassModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group pt-3 px-2 changePass-1">
+                <label for="">Enter Your New Password</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 changePass-inp-1"
+                  name=""
+                />
+              </div>
+              <div class="form-group py-3 px-2 changePass-2">
+                <label for="">Repeat Your New Password</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 changePass-inp-2"
+                  name=""
+                />
+              </div>
+              <button class="btn btn-sm btn-primary w-100 mt-3 changePass-btn">
+                Change
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Forget Change Password Modal -->
+    <!-- Chnage password Modal -->
+    <div
+      class="modal fade"
+      id="changeAccountPassModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group pt-3 px-2 AccChangePass-1">
+                <label for="">Enter Your Current Password</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-1"
+                  name=""
+                />
+              </div>
+              <div class="form-group pt-3 px-2 AccChangePass-2">
+                <label for="">Enter Your New Password</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-2"
+                  name=""
+                />
+              </div>
+              <div class="form-group py-3 px-2 AccChangePass-3">
+                <label for="">Repeat Your New Password</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-3"
+                  name=""
+                />
+              </div>
+              <button
+                class="btn btn-sm btn-primary w-100 mt-3 AccChangePass-btn"
+              >
+                Change
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Chnage password Modal -->
     <!-- Top Button -->
     <div class="top-button d-none">
       <button class="btn btn-primary rounded-circle">
@@ -634,7 +736,7 @@
           <!-- Single Service -->
           <div class="col-lg-6 col-10 mx-auto service mb-5">
             <div class="card tilt" id="fake2">
-              <div class="card-body text-center">
+              <div class="card-body text-center" id="card-fake2">
                 <img
                   data-src="./images/6685.jpg"
                   class="img-fluid mb-3 service-img lazy"
@@ -650,7 +752,7 @@
                   These types of members often have profiles and names and do
                   not add any view to your channel.
                 </p>
-                <button class="btn btn-primary rounded buy-btn">
+                <button class="btn btn-primary rounded buy-btn" id="buy-btn3">
                   Buy Service
                 </button>
               </div>
@@ -703,7 +805,7 @@
                   These types of members are not real, they often have profiles
                   and names and do not add any views to your channel.
                 </p>
-                <button class="btn btn-primary rounded buy-btn">
+                <button class="btn btn-primary rounded buy-btn" id="buy-btn5">
                   Buy Service
                 </button>
               </div>
@@ -1324,6 +1426,12 @@
             $(".forget-enter-btn").addClass("disabled");
           }
         });
+        $(".forget-enter-btn").click(function () {
+          $(".forget-enter-inp").val("");
+          $(".forget-send-inp").val("");
+          $("#forgetModal").modal("hide");
+          $("#changePassModal").modal("show");
+        });
         //#region Verify Account
         var verifyNumbs = /^\d+$/;
         $(".verify-inp").keyup(function () {
@@ -1332,8 +1440,17 @@
           } else {
             $(".verify-btn").addClass("disabled");
           }
+          $(".verify-btn").click(function () {
+            $(".reg input").val("");
+            $("#verifyModal").modal("hide");
+            Swal.fire({
+              icon: "success",
+              title: "Your Account Created Successfuly",
+              showConfirmButton: true,
+            });
+          });
         });
-        ///#endregion
+        //#endregion
         //#endregion
         //#region Login
         var loginUserNull = false;
@@ -1356,7 +1473,7 @@
             $(".login-username-inp").addClass("is-invalid");
             if (loginUserChNull == false) {
               $(".login-username").append(
-                `<span class="invalid-feedback">Cant just use numbers for username</span>`
+                `<span class="invalid-feedback">Change Your Language To English or Dont Use Numbers For Username</span>`
               );
             }
             loginUserChNull = true;
@@ -1384,6 +1501,34 @@
               );
             }
             loginPassCh = true;
+          } else {
+            $(".login-password-inp").val("");
+            $(".login-username-inp").val("");
+            $("#loginModal").modal("hide");
+            $("#navbarRegister").replaceWith(`
+            <li class="nav-item dropdown" id="navbarUser">
+              <a
+                href="#"
+                id="navbar-services"
+                class="nav-link dropdown-toggle panel-nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <span class="fas fa-user"></span>
+                Mahdiyar
+              </a>
+              <div class="dropdown-menu dropdown-menu-dark pe-0">
+                <button class="dropdown-item chargeWallet">
+                  <span class="fas fa-wallet"></span> : 120$
+                </button>
+                <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changeAccountPassModal">Change Password</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" id="logoutAccount">
+                  Log out
+                  <span class="fas fa-sign-out-alt ps-5"></span>
+                </button>
+              </div>
+            </li>
+            `);
           }
         });
         //#endregion
@@ -1413,7 +1558,7 @@
             $(".reg-user-inp").addClass("is-invalid");
             if (userChNull == false) {
               $(".reg-user").append(
-                `<span class="invalid-feedback">Cant just use numbers for username</span>`
+                `<span class="invalid-feedback">Change Your Language To English or Dont Use Numbers For Username</span>`
               );
             }
             userChNull = true;
@@ -1484,6 +1629,143 @@
           $("#registerModal").modal("show");
         });
         //#endregion
+        //#region Forget Change Password
+        var newPassNull = false;
+        var newPassCh = false;
+        var repeatPassWrong = false;
+        $(".changePass-btn").click(function () {
+          if ($(".changePass-inp-1").val() == "") {
+            $(".changePass-inp-1").addClass("is-invalid");
+            if (newPassNull == false) {
+              $(".changePass-1").append(
+                `<span class="invalid-feedback">Enter your password</span>`
+              );
+            }
+            newPassNull = true;
+          } else if ($(".changePass-inp-1").val().length < 4) {
+            $(".changePass-inp-1").addClass("is-invalid");
+            if (newPassCh == false) {
+              $(".changePass-1").append(
+                `<span class="invalid-feedback">Enter 4 character or more</span>`
+              );
+            }
+            newPassCh = true;
+          } else if (
+            $(".changePass-inp-1").val() !== $(".changePass-inp-2").val()
+          ) {
+            $(".changePass-inp-2").addClass("is-invalid");
+            if (repeatPassWrong == false) {
+              $(".changePass-2").append(
+                `<span class="invalid-feedback">Repeat password is incorrect</span>`
+              );
+            }
+            repeatPassWrong = true;
+          } else {
+            $(".changePass-inp-1").val("");
+            $(".changePass-inp-2").val("");
+            Swal.fire({
+              title: "Your Password Has Been Changed",
+              icon: "success",
+              showConfirmButton: true,
+            });
+            $("#changePassModal").modal("hide");
+          }
+        });
+        //#endregion
+        //#endregion
+        //#region User
+        $(document).on("click", "#logoutAccount", function () {
+          $("#navbarUser").replaceWith(`
+          <li class="nav-item" id="navbarRegister">
+              <a
+                href="#"
+                id="navbar-register"
+                class="nav-link panel-nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                >Register/Login</a
+              >
+            </li>
+          `);
+        });
+        $(document).on("click", ".chargeWallet", function () {
+          Swal.fire({
+            icon: "question",
+            title: "Charage Wallet",
+            text: "Do You Want Cahrge Your Wallet?",
+            confirmButtonText: "Yes",
+            showCancelButton: true,
+            cancelButtonText: "No",
+          }).then((result)=>{
+            if(result.isConfirmed){
+              window.open('http://www.dlfox.com', '_blank');
+            }
+          })
+        });
+        //#endregion
+        //#region AccountChangePass
+        var accCurrentPassNull = false;
+        var accCurrentPassCh = false;
+        var accNewPassNull = false;
+        var accNewPassCh = false;
+        var accRepeatPassWrong = false;
+        $(".AccChangePass-btn").click(function () {
+          if ($(".AccChangePass-inp-1").val() == "") {
+            $(".AccChangePass-inp-1").addClass("is-invalid");
+            if (accCurrentPassNull == false) {
+              $(".AccChangePass-1").append(`
+              <span class="invalid-feedback">Enter Your Current Password</span>
+              `);
+            }
+            accCurrentPassNull = true;
+          } else if ($(".AccChangePass-inp-1").val().length < 4) {
+            $(".AccChangePass-inp-1").addClass("is-invalid");
+            if (accCurrentPassCh == false) {
+              $(".AccChangePass-1").append(`
+              <span class="invalid-feedback">Enter 4 Character Or More</span>
+              `);
+            }
+            accCurrentPassCh = true;
+          } else if ($(".AccChangePass-inp-2").val() == "") {
+            $(".AccChangePass-inp-2").addClass("is-invalid");
+            if (accNewPassNull == false) {
+              $(".AccChangePass-2").append(`
+              <span class="invalid-feedback">Enter Your New Password</span>
+              `);
+            }
+            accNewPassNull = true;
+          } else if ($(".AccChangePass-inp-2").val().length < 4) {
+            $(".AccChangePass-inp-2").addClass("is-invalid");
+            if (accNewPassCh == false) {
+              $(".AccChangePass-2").append(`
+              <span class="invalid-feedback">Enter 4 Character Or More</span>
+              `);
+            }
+            accNewPassCh = true;
+          } else if (
+            $(".AccChangePass-inp-3").val() !== $(".AccChangePass-inp-2").val()
+          ) {
+            $(".AccChangePass-inp-3").addClass("is-invalid");
+            if (accRepeatPassWrong == false) {
+              $(".AccChangePass-3").append(`
+              <span class="invalid-feedback">Repeat Password Is Wrong</span>
+              `);
+            }
+            accRepeatPassWrong = true;
+          } else {
+            $(".AccChangePass-inp-1").val("");
+            $(".AccChangePass-inp-2").val("");
+            $(".AccChangePass-inp-3").val("");
+            $("#changeAccountPassModal .is-invalid").removeClass("is-invalid");
+            $("#changeAccountPassModal").modal("hide");
+            Swal.fire({
+              title: "Success",
+              icon: "success",
+              text: "Your Password Changed Successfuly",
+              showConfirmButton: true,
+            });
+          }
+        });
         //#endregion
         //#region JQlazy
         $(".lazy").lazy();

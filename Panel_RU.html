@@ -140,7 +140,7 @@
             <li class="nav-item">
               <a
                 href="#"
-                id="navbar-register"
+                id="navbarRegister"
                 class="nav-link panel-nav-link"
                 data-bs-toggle="modal"
                 data-bs-target="#loginModal"
@@ -275,7 +275,7 @@
                 />
               </div>
               <div class="form-group mb-4 reg reg-email">
-                <label for="">Электронное письмо</label>
+                <label for="">Email</label>
                 <input
                   type="email"
                   class="form-control reg-email-inp mt-2"
@@ -326,9 +326,7 @@
           <div class="modal-body">
             <fieldset class="form-group">
               <div class="form-group mb-4">
-                <label for=""
-                  >Введите код подтверждения электронной почты</label
-                >
+                <label for="">Введите код email почты</label>
                 <input
                   type="text"
                   minlength="0"
@@ -377,8 +375,7 @@
             <fieldset class="form-group">
               <div class="form-group border mb-4 py-3 px-2 forget-send">
                 <label for=""
-                  >Введите свой адрес электронной почты, чтобы получить
-                  код</label
+                  >Введите свой адрес email, чтобы получить код</label
                 >
                 <input
                   type="email"
@@ -420,6 +417,108 @@
       </div>
     </div>
     <!-- End Forget Password Modal -->
+    <!-- Forget Change Password Modal -->
+    <div
+      class="modal fade"
+      id="changePassModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Изменить пароль</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group pt-3 px-2 changePass-1">
+                <label for="">Введите новый пароль</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 changePass-inp-1"
+                  name=""
+                />
+              </div>
+              <div class="form-group py-3 px-2 changePass-2">
+                <label for="">Повторите новый пароль</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 changePass-inp-2"
+                  name=""
+                />
+              </div>
+              <button class="btn btn-sm btn-primary w-100 mt-3 changePass-btn">
+                Изменить
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Forget Change Password Modal -->
+    <!-- Chnage password Modal -->
+    <div
+      class="modal fade"
+      id="changeAccountPassModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Изменить пароль</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <div class="form-group pt-3 px-2 AccChangePass-1">
+                <label for="">Введи свой текущий пароль</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-1"
+                  name=""
+                />
+              </div>
+              <div class="form-group pt-3 px-2 AccChangePass-2">
+                <label for="">Введите новый пароль</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-2"
+                  name=""
+                />
+              </div>
+              <div class="form-group py-3 px-2 AccChangePass-3">
+                <label for="">Повторите свой новый пароль</label>
+                <input
+                  type="password"
+                  class="form-control mt-2 AccChangePass-inp-3"
+                  name=""
+                />
+              </div>
+              <button
+                class="btn btn-sm btn-primary w-100 mt-3 AccChangePass-btn"
+              >
+                Изменять
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Chnage password Modal -->
     <!-- Top Button -->
     <div class="top-button d-none">
       <button class="btn btn-primary rounded-circle">
@@ -629,7 +728,7 @@
                   Эти типы членов часто имеют профили и имена и имеют не падать
                   и не добавлять просмотров на ваш канал.
                 </p>
-                <button class="btn btn-primary rounded buy-btn">
+                <button class="btn btn-primary rounded buy-btn" id="buy-btn2">
                   Купить услугу
                 </button>
               </div>
@@ -655,7 +754,7 @@
                   Эти типы членов часто имеют профили и имена и делают не
                   добавлять просмотров на ваш канал.
                 </p>
-                <button class="btn btn-primary rounded buy-btn">
+                <button class="btn btn-primary rounded buy-btn" id="buy-btn3">
                   Купить услугу
                 </button>
               </div>
@@ -1294,7 +1393,7 @@
             $(".forget-send-inp").addClass("is-invalid");
             if (emailNull == false) {
               $(".forget-send").append(
-                `<span class="invalid-feedback">Введите адрес электронной почты</span>`
+                `<span class="invalid-feedback">Введите адрес email</span>`
               );
             }
             emailNull = true;
@@ -1302,14 +1401,14 @@
             $(".forget-send-inp").addClass("is-invalid");
             if (emailWrong == false) {
               $(".forget-send").append(
-                `<span class="invalid-feedback">Введите действующий адрес электронной почты</span>`
+                `<span class="invalid-feedback">Введите действующий адрес email</span>`
               );
             }
             emailWrong = true;
           } else {
             Swal.fire({
               icon: "success",
-              title: "Код был отправлен на ваш адрес электронной почты",
+              title: "Код был отправлен на ваш адрес email",
               showConfirmButton: true,
               // timer: 3000,
             });
@@ -1330,6 +1429,12 @@
             $(".verify-btn").addClass("disabled");
           }
         });
+        $(".forget-enter-btn").click(function () {
+          $(".forget-enter-inp").val("");
+          $(".forget-send-inp").val("");
+          $("#forgetModal").modal("hide");
+          $("#changePassModal").modal("show");
+        });
         //#endregion
         //#region Verify Account
         var verifyNumbs = /^\d+$/;
@@ -1339,6 +1444,15 @@
           } else {
             $(".verify-btn").addClass("disabled");
           }
+          $(".verify-btn").click(function () {
+            $(".reg input").val("");
+            $("#verifyModal").modal("hide");
+            Swal.fire({
+              icon: "success",
+              title: "Your Account Created Successfuly",
+              showConfirmButton: true,
+            });
+          });
         });
         ///#endregion
         //#endregion
@@ -1363,7 +1477,7 @@
             $(".login-username-inp").addClass("is-invalid");
             if (loginUserChNull == false) {
               $(".login-username").append(
-                `<span class="invalid-feedback">Не могу просто использовать цифры для имени пользователя</span>`
+                `<span class="invalid-feedback">Измените свой язык на английский или не используйте цифры для имени пользователя</span>`
               );
             }
             loginUserChNull = true;
@@ -1391,6 +1505,34 @@
               );
             }
             loginPassCh = true;
+          } else {
+            $(".login-password-inp").val("");
+            $(".login-username-inp").val("");
+            $("#loginModal").modal("hide");
+            $("#navbarRegister").replaceWith(`
+            <li class="nav-item dropdown" id="navbarUser">
+              <a
+                href="#"
+                id="navbar-services"
+                class="nav-link dropdown-toggle panel-nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <span class="fas fa-user"></span>
+                Mahdiyar
+              </a>
+              <div class="dropdown-menu dropdown-menu-dark pe-0">
+                <button class="dropdown-item chargeWallet">
+                  <span class="fas fa-wallet"></span> : 120$
+                </button>
+                <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changeAccountPassModal">Изменить пароль</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item " id="logoutAccount">
+                  Выйти
+                  <span class="fas fa-sign-out-alt ps-5"></span>
+                </button>
+              </div>
+            </li>
+            `);
           }
         });
         //#endregion
@@ -1420,7 +1562,7 @@
             $(".reg-user-inp").addClass("is-invalid");
             if (userChNull == false) {
               $(".reg-user").append(
-                `<span class="invalid-feedback">Не могу просто использовать цифры для имени пользователя</span>`
+                `<span class="invalid-feedback">Измените свой язык на английский или не используйте цифры для имени пользователя</span>`
               );
             }
             userChNull = true;
@@ -1468,7 +1610,7 @@
             $(".reg-email-inp").addClass("is-invalid");
             if (emailNull == false) {
               $(".reg-email").append(
-                `<span class="invalid-feedback">Введите адрес электронной почты</span>`
+                `<span class="invalid-feedback">Введите адрес email</span>`
               );
             }
             emailNull = true;
@@ -1476,7 +1618,7 @@
             $(".reg-email-inp").addClass("is-invalid");
             if (emailWrong == false) {
               $(".reg-email").append(
-                `<span class="invalid-feedback">Введите действующий адрес электронной почты</span>`
+                `<span class="invalid-feedback">Введите действующий адрес email</span>`
               );
             }
             emailWrong = true;
@@ -1491,6 +1633,143 @@
           $("#registerModal").modal("show");
         });
         //#endregion
+        //#region Change Password
+        var newPassNull = false;
+        var newPassCh = false;
+        var repeatPassWrong = false;
+        $(".changePass-btn").click(function () {
+          if ($(".changePass-inp-1").val() == "") {
+            $(".changePass-inp-1").addClass("is-invalid");
+            if (newPassNull == false) {
+              $(".changePass-1").append(
+                `<span class="invalid-feedback">Введите свой пароль</span>`
+              );
+            }
+            newPassNull = true;
+          } else if ($(".changePass-inp-1").val().length < 4) {
+            $(".changePass-inp-1").addClass("is-invalid");
+            if (newPassCh == false) {
+              $(".changePass-1").append(
+                `<span class="invalid-feedback">Пожалуйста, введите 4 символа или более</span>`
+              );
+            }
+            newPassCh = true;
+          } else if (
+            $(".changePass-inp-1").val() !== $(".changePass-inp-2").val()
+          ) {
+            $(".changePass-inp-2").addClass("is-invalid");
+            if (repeatPassWrong == false) {
+              $(".changePass-2").append(
+                `<span class="invalid-feedback">Повторить неверный пароль</span>`
+              );
+            }
+            repeatPassWrong = true;
+          } else {
+            $(".changePass-inp-1").val("");
+            $(".changePass-inp-2").val("");
+            Swal.fire({
+              title: "Ваш пароль был изменен",
+              icon: "success",
+              showConfirmButton: true,
+            });
+            $("#changePassModal").modal("hide");
+          }
+        });
+        //#endregion
+        //#endregion
+        //#region User
+        $(document).on("click", "#logoutAccount", function () {
+          $("#navbarUser").replaceWith(`
+          <li class="nav-item" id="navbarRegister">
+              <a
+                href="#"
+                id="navbar-register"
+                class="nav-link panel-nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                >Регистрация/Вход</a
+              >
+            </li>
+          `);
+        });
+        $(document).on("click", ".chargeWallet", function () {
+          Swal.fire({
+            icon: "question",
+            title: "Кошелек Charage",
+            text: "Вы хотите зарядить свой кошелек?",
+            confirmButtonText: "да",
+            showCancelButton: true,
+            cancelButtonText: "Нет",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open("http://www.dlfox.com", "_blank");
+            }
+          });
+        });
+        //#endregion
+        //#region AccountChangePass
+        var accCurrentPassNull = false;
+        var accCurrentPassCh = false;
+        var accNewPassNull = false;
+        var accNewPassCh = false;
+        var accRepeatPassWrong = false;
+        $(".AccChangePass-btn").click(function () {
+          if ($(".AccChangePass-inp-1").val() == "") {
+            $(".AccChangePass-inp-1").addClass("is-invalid");
+            if (accCurrentPassNull == false) {
+              $(".AccChangePass-1").append(`
+              <span class="invalid-feedback">Введи свой текущий пароль</span>
+              `);
+            }
+            accCurrentPassNull = true;
+          } else if ($(".AccChangePass-inp-1").val().length < 4) {
+            $(".AccChangePass-inp-1").addClass("is-invalid");
+            if (accCurrentPassCh == false) {
+              $(".AccChangePass-1").append(`
+              <span class="invalid-feedback">Введите 4 символа или больше</span>
+              `);
+            }
+            accCurrentPassCh = true;
+          } else if ($(".AccChangePass-inp-2").val() == "") {
+            $(".AccChangePass-inp-2").addClass("is-invalid");
+            if (accNewPassNull == false) {
+              $(".AccChangePass-2").append(`
+              <span class="invalid-feedback">Введите новый пароль</span>
+              `);
+            }
+            accNewPassNull = true;
+          } else if ($(".AccChangePass-inp-2").val().length < 4) {
+            $(".AccChangePass-inp-2").addClass("is-invalid");
+            if (accNewPassCh == false) {
+              $(".AccChangePass-2").append(`
+              <span class="invalid-feedback">Введите 4 символа или больше</span>
+              `);
+            }
+            accNewPassCh = true;
+          } else if (
+            $(".AccChangePass-inp-3").val() !== $(".AccChangePass-inp-2").val()
+          ) {
+            $(".AccChangePass-inp-3").addClass("is-invalid");
+            if (accRepeatPassWrong == false) {
+              $(".AccChangePass-3").append(`
+              <span class="invalid-feedback">повторение Неправильный пароль</span>
+              `);
+            }
+            accRepeatPassWrong = true;
+          } else {
+            $(".AccChangePass-inp-1").val("");
+            $(".AccChangePass-inp-2").val("");
+            $(".AccChangePass-inp-3").val("");
+            $("#changeAccountPassModal .is-invalid").removeClass("is-invalid");
+            $("#changeAccountPassModal").modal("hide");
+            Swal.fire({
+              title: "Успех",
+              icon: "success",
+              text: "Ваш пароль успешно изменен",
+              showConfirmButton: true,
+            });
+          }
+        });
         //#endregion
         //#region JQlazy
         $(".lazy").lazy();
